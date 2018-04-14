@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Top Rated</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item *ngFor="let company of companies; let i = index">
+    <ion-row>
+      <ion-col col-2>
+        <ion-avatar item-start>
+          <img *ngIf="company.imageVersion !== ''" src="http://res.cloudinary.com/rateapp/image/upload/v{{company.imageVersion}}/{{company.imageId}}">
+          <img *ngIf="company.imageVersion === ''" src="http://placehold.it/10x10">
+        </ion-avatar>
+      </ion-col>
+
+      <ion-col col-10 class="rowCol">
+        <h2 class="companyname" text-wrap>
+          {{company.companyname}}
+        </h2>
+
+        <ion-col class="dataCol">
+          <ion-row>
+            <ion-col col-12 text-wrap>
+              <span>
+                <ion-icon name="star" class="iconClass"></ion-icon>
+                {{company.totalStars}} Total Stars
+              </span>
+            </ion-col>
+            <ion-col col-12 text-wrap>
+              <ion-icon name="add-circle" class="iconClass"></ion-icon>
+              #{{i + 1}}
+            </ion-col>
+
+            <ion-col col-12 class="rating">
+              
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-item>
+</ion-content>

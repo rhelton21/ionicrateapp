@@ -1,18 +1,60 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent> 
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+<ion-content>
+  <h3 class="header1" *ngIf="user">Hello, {{user.fullname}}</h3>
+  <p class="text-content1">
+    What would you like to do today?
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-card class="card1">
+    <ion-icon name="log-in"></ion-icon>
+    <ion-card-header class="header">
+      Add Company
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Add company profile. Registered employees can give reviews.
+      </p>
+
+      <button class="btn1" ion-button block (click)="addCompany()">Add</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card2">
+    <ion-icon name="search"></ion-icon>
+    <ion-card-header class="header">
+      Search
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Search through our business catalogue and find your best partner.
+      </p>
+
+      <button class="btn2" ion-button block (click)="goToSearch()">Search</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card3">
+    <ion-icon name="star"></ion-icon>
+    <ion-card-header class="header">
+      Rate
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Rate and review other companies and get your company reviewed.
+      </p>
+
+      <button class="btn3" ion-button block (click)="reviewPage()">Rate</button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

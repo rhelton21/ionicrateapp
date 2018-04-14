@@ -6,12 +6,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-leader',
+  templateUrl: 'leader.html',
 })
-export class HomePage {
+export class LeaderPage {
 
-  user: any;
+  companies = [];
 
   constructor(
     public navCtrl: NavController, 
@@ -21,26 +21,10 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.company.getUserData()
+    this.company.leaderBoard()
       .subscribe(res => {
-        console.log(res.user)
-        this.user = res.user;
-      });
+        this.companies = res.result;
+      })
   }
-
-  reviewPage(){
-    this.navCtrl.push("ReviewPage");
-  }
-
-  goToSearch(){
-    this.navCtrl.push("SearchPage");
-  }
-
-  addCompany(){
-    this.navCtrl.push("CreatecompanyPage");
-  }
-
-
-
 
 }

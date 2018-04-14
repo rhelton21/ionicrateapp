@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register Company</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div>
+    <ion-item>
+      <ion-label color="primary" stacked>Company Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Company Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>City</ion-label>
+      <ion-input type="text" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Country</ion-label>
+      <ion-input type="text" [(ngModel)]="country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Sector</ion-label>
+      <ion-input type="text" [(ngModel)]="sector"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Website</ion-label>
+      <ion-input type="text" [(ngModel)]="website"></ion-input>
+    </ion-item>
+
+    <ion-item class="btnItem">
+      <button ion-button block (click)="register()">Register</button>
+    </ion-item>
+  </div>
+</ion-content>
